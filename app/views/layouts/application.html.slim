@@ -1,17 +1,21 @@
 doctype html
 html
   head
-    title
-      | AppTemplate
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title TA App
     = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    div
+      - if user_signed_in?
+        = render 'static/nav'
     .container
       .row
-        .col-md-10
-          = nav_helper('div')
-        .col-md-2
-          = login_helper
-      = yield
-      = alerts
+        = yield
+      .col-md-4
+        = render "static/hand_raise_queue"
+      .col-md-8.block-background
+        = render "static/hand_raise"
+

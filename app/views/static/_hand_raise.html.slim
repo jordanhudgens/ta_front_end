@@ -1,0 +1,26 @@
+.container.border-test
+  .row
+    .col-md-6.border-test.active-ticket.ticket-titles
+      | ACTIVE TICKET
+    .col-md-6.border-test.d-flex.flex-row
+      button.unresolved.btn.btn-outline-secondary.unresolved-btn data-target="#unresolved" data-toggle="collapse"  Mark Unresolved
+      button.resolved.btn.btn-primary.resolved-btn data-target="#resolved" data-toggle="collapse"  Resolved
+    .col-md-12
+      .container
+        #unresolved.collapse.form-group
+          .form-group
+            textarea#comment.form-control placeholder=("Enter your TA notes here") rows="5" 
+          button.resolved.btn.btn-primary.resolved-btn data-target="#resolved" data-toggle="collapse"  Cancel
+          button.resolved.btn.btn-primary.resolved-btn data-target="#resolved" data-toggle="collapse"  Finish
+          button.unresolved.btn.btn-outline-secondary.unresolved-btn data-target="#demo" data-toggle="collapse"  Mark Unresolved
+    #demo.collapse.form-group
+    .col-md-12
+      .container
+        #resolved.collapse.form-group
+          .form-group
+            textarea#comment.form-control placeholder=("Enter your TA notes here") rows="5" 
+          button.resolved.btn.btn-primary.resolved-btn data-target="#resolved" data-toggle="collapse"  Cancel
+          button.resolved.btn.btn-primary.resolved-btn data-target="#resolved" data-toggle="collapse"  Finish
+    .col-md-12.active-ticket
+      = render 'static/hand_raise_details'
+
