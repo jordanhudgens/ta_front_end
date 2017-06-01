@@ -1,16 +1,18 @@
 nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-  button.navbar-toggler aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo01" data-toggle="collapse" type="button" 
+  button.navbar-toggler
     span.navbar-toggler-icon
-  #navbarTogglerDemo01.collapse.navbar-collapse
-    a.navbar-brand href="#"  Bottega
+  .collapse.navbar-collapse
+    = link_to image_tag('bottega-logo.png', width: '50%'), root_path, class: 'navbar-brand'
     ul.navbar-nav.mr-auto.mt-2.mt-lg-0
       span.navbar-nav.back
-        li.nav-item.active
-          a.nav-link href="#" 
-            | Unavailable
-            span.sr-only (current)
-        li.nav-item
-          a.nav-link.toggle-feature href="#"  Available
+        li.nav-item.checky.active
+          label.tgl
+            input checked="checked" type="checkbox" /
+            span.tgl_body
+              span.tgl_switch
+              span.tgl_track
+                span.tgl_bgd
+                span.tgl_bgd.tgl_bgd-negative
     ul.navbar-nav.justify-content-end
       li.nav-item
         a.nav-link.disabled href="#"  Queue
