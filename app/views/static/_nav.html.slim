@@ -15,9 +15,12 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
                 span.tgl_bgd.tgl_bgd-negative
     ul.navbar-nav.justify-content-end
       li.nav-item
-        a.nav-link.disabled href="#"  Queue
+        = link_to 'QUEUE', '#', class: 'nav-link'
       li.nav-item
-        a.nav-link.disabled href="#"  Unresolved
+        = link_to 'IN PROGRESS', '#', class: 'nav-link'
       li.nav-item
-        a.nav-link.disabled href="#"  Log Out
-
+        = link_to 'RESOLVED', '#', class: 'nav-link'
+      li.nav-item
+        = link_to 'UNRESOLVED', '#', class: 'nav-link'
+      li.nav-item
+        = link_to 'LOG OUT', '#', class: 'nav-link'

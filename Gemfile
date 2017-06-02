@@ -41,3 +41,5 @@ gem 'gritter', '~> 1.2'
 gem 'hirb'
 gem 'kaminari', '~> 1.0'
 gem 'devcamp_view_tool', '~> 0.1.0'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'httparty', '~> 0.15.5'
