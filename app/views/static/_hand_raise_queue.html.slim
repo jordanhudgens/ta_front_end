@@ -3,6 +3,4 @@
 .card
   .container.queue-container
     .row
-       = link_to 'Take Next', root_path, class: 'btn btn-primary take-next-button btn-block'
-    .row
-      = render 'static/users_in_queue'
+      = render partial: 'static/users_in_queue', locals: { hand_raises: hand_raises }

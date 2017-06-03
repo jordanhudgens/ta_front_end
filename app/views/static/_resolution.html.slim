@@ -11,8 +11,15 @@
 
   .row
     .ticket-title
-      = hand_raise['question']
-
+      = 'asdfa'
   .row
     .ticket-info
       = hand_raise['body']
+
+.row.resolution-buttons
+  .col-md-3
+  .col-md-3
+    = link_to 'Nevermind', root_path, class: 'btn btn-danger btn-block', id: 'nevermind-link'
+  .col-md-3
+    = link_to 'Submit', root_path, class: 'btn btn-primary btn-block', id: 'nevermind-link2'
+  .col-md-3
