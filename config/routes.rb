@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     get "/sign_up",  :to => "devise/registrations#new"
   end
 
+  post 'resolution', to: 'static#resolution'
   root to: 'static#home'
 end

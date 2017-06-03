@@ -1,4 +1,4 @@
-- if hand_raises.any?
+- if hand_raises
   = link_to 'Take Next', root_path, class: 'btn btn-primary take-next-button btn-block'
   - hand_raises.each do |hand_raise|
     .row.queue-component

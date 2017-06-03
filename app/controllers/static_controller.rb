@@ -10,4 +10,9 @@ class StaticController < ApplicationController
       @hand_raise = HandRaiseApiConnector.get_by_id(params[:id])
     end
   end
+
+  def resolution
+    HandRaiseApiConnector.submit_resolution(params['id'], params['Status'], params['resolution'], current_user)
+    redirect_to root_path, notice: 'Your resolution has been submitted'
+  end
 end

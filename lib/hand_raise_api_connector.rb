@@ -24,6 +24,20 @@ module HandRaiseApiConnector
     )
   end
 
+  def self.submit_resolution(id, status, resolution, ta)
+    params = {
+      'hand_raise[resolution]' => resolution,
+      'hand_raise[status]' => status,
+      'hand_raise[ta_name]' => ta.full_name,
+      'hand_raise[ta_email]' => ta.email
+    }
+
+    HTTParty.patch(
+      "#{ENV.fetch('HAND_RAISE_URL')}/#{id}",
+      connection.merge({ query: params })
+    )
+  end
+
   def self.filter_mapper(filter)
     case filter
     when 'pending'     then 0
