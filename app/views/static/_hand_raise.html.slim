@@ -1,7 +1,7 @@
-.container.border-test
+.card
   .row
     .col-md-6.border-test.active-ticket.ticket-titles
-      | ACTIVE TICKET
+      = hand_raise['status'].upcase
     .col-md-6.border-test.d-flex.flex-row
       button.unresolved.btn.btn-outline-secondary.unresolved-btn data-target="#unresolved" data-toggle="collapse"  Mark Unresolved
       button.resolved.btn.btn-primary.resolved-btn data-target="#resolved" data-toggle="collapse"  Resolved
@@ -22,5 +22,5 @@
           button.resolved.btn.btn-primary.resolved-btn data-target="#resolved" data-toggle="collapse"  Cancel
           button.resolved.btn.btn-primary.resolved-btn data-target="#resolved" data-toggle="collapse"  Finish
     .col-md-12.active-ticket
-      = render 'static/hand_raise_details'
+      = render partial: 'static/hand_raise_details', locals: { hand_raise: hand_raise }
 

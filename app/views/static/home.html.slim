@@ -1,0 +1,5 @@
+.col-md-4
+  = render partial: "static/hand_raise_queue", locals: { hand_raises: @hand_raises }
+.col-md-8
+  - if @hand_raise
+    = render partial: "static/hand_raise", locals: { hand_raise: @hand_raise }

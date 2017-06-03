@@ -9,14 +9,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    div
-      - if user_signed_in?
-        = render 'static/nav'
+    - if user_signed_in?
+      = render 'static/nav'
     .container
       .row
         = yield
-      .col-md-4
-        = render "static/hand_raise_queue"
-      .col-md-8.block-background
-        = render "static/hand_raise"
 

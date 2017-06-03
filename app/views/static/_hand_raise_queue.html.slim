@@ -1,7 +1,7 @@
-.container.border-test.block-background
+.row
   .ticket-titles
-    | QUEUE
+    = (params[:filter] || 'pending').upcase
   button.resolved.btn.btn-primary.btn-block.take-next-btn data-target="#demo" data-toggle="collapse"  Take Next
-.container.border-test
+.row
   = render 'static/users_in_queue'
 

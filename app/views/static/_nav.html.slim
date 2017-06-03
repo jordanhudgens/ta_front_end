@@ -1,26 +1,23 @@
 nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-  button.navbar-toggler
-    span.navbar-toggler-icon
-  .collapse.navbar-collapse
-    = link_to image_tag('bottega-logo.png', width: '50%'), root_path, class: 'navbar-brand'
-    ul.navbar-nav.mr-auto.mt-2.mt-lg-0
-      span.navbar-nav.back
-        li.nav-item.checky.active
-          label.tgl
-            input checked="checked" type="checkbox" /
-            span.tgl_body
-              span.tgl_switch
-              span.tgl_track
-                span.tgl_bgd
-                span.tgl_bgd.tgl_bgd-negative
+  .container
+    = link_to image_tag('bottega-logo.png', width: '50%'), root_path, class: 'navbar-brand logo'
+    ul.navbar-nav.mr-auto.mt-2
+      li.nav-item.checky.active
+        label.tgl
+          input checked="checked" type="checkbox" /
+          span.tgl_body
+            span.tgl_switch
+            span.tgl_track
+              span.tgl_bgd
+              span.tgl_bgd.tgl_bgd-negative
     ul.navbar-nav.justify-content-end
       li.nav-item
-        = link_to 'QUEUE', '#', class: 'nav-link'
+        = link_to 'Pending', '?filter=pending', class: 'nav-link'
       li.nav-item
-        = link_to 'IN PROGRESS', '#', class: 'nav-link'
+        = link_to 'In Progress', '?filter=in_progress', class: 'nav-link'
       li.nav-item
-        = link_to 'RESOLVED', '#', class: 'nav-link'
+        = link_to 'Resolved', '?filter=resolved', class: 'nav-link'
       li.nav-item
-        = link_to 'UNRESOLVED', '#', class: 'nav-link'
+        = link_to 'Unresolved', '?filter=unresolved', class: 'nav-link'
       li.nav-item
-        = link_to 'LOG OUT', '#', class: 'nav-link'
+        = link_to '<i class="fa fa-sign-out" aria-hidden="true"></i>'.html_safe, destroy_user_session_path, method: :delete, class: 'nav-link'
