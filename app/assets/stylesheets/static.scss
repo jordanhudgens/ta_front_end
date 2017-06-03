@@ -1,3 +1,36 @@
-// Place all the styles related to the Static controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.queue-container {
+  padding: 15px;
+}
+
+.queue-component {
+  padding: 15px 15px 15px 5px;
+  border: 1px solid #D8D8D8;
+  margin: 5px 15px 5px 15px;
+  border-radius: 5px;
+}
+
+.queue-component img {
+  margin-top: 5px;
+  border-radius: 100%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.queue-item-title {
+  vertical-align: middle !important;
+  font-size: .8rem;
+}
+
+.action-icons {
+  border-left: 0.5px solid #D8D8D8;
+}
+
+.queue-action-icon-links a {
+  color: #3AE39F;
+  font-size: 1.42rem;
+}
+
+.take-next-button {
+  padding: 32px;
+  margin: 0px 15px 15px 15px;
+}

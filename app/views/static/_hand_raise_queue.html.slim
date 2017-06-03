@@ -1,7 +1,8 @@
-.row
-  .ticket-titles
-    = (params[:filter] || 'pending').upcase
-  button.resolved.btn.btn-primary.btn-block.take-next-btn data-target="#demo" data-toggle="collapse"  Take Next
-.row
-  = render 'static/users_in_queue'
+= (params[:filter] || 'pending').upcase
 
+.card
+  .container.queue-container
+    .row
+       = link_to 'Take Next', root_path, class: 'btn btn-primary take-next-button btn-block'
+    .row
+      = render 'static/users_in_queue'

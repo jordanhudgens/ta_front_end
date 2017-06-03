@@ -1,4 +1,10 @@
-.row
-  .users-queue
-    .row.queue-block-sizing.inline-block
-      img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+.row.queue-component
+  .col-md-4
+    = image_tag 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'
+  .col-md-6.queue-item-title
+    = "My question updated"
+  .col-md-2.action-icons
+    div.queue-action-icon-links
+      = link_to '<i class="fa fa-play" aria-hidden="true"></i>'.html_safe, root_path
+    div.queue-action-icon-links
+      = link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, root_path
