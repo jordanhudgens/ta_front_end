@@ -1,10 +1,19 @@
-.card-details
-  .row
-    .col-md-12
-      .ticket-info
-        = form_tag resolution_path, method: :post do
-          = text_area_tag 'resolution'
-          = select_tag "Status", options_for_select([['Resolved', 'resolved'], ['Unresolved', 'unresolved']], 'status'), include_blank: true
-          = hidden_field_tag 'id', params[:id]
-          = link_to 'Nevermind', root_path, class: 'btn btn-danger btn-block', id: 'nevermind-link'
-          = submit_tag
+.row
+  .col-md-12
+    .ticket-info
+      = form_tag resolution_path, method: :post do
+        div.form-group
+          = 'Resolution'
+          br
+          = text_area_tag 'resolution', nil, class: 'form-control', rows: 20
+        div.form-group
+          = 'Status'
+          br
+          = select_tag "Status", options_for_select([['Resolved', 'resolved'], ['Unresolved', 'unresolved']], 'status'), include_blank: true, class: 'form-control'
+        = hidden_field_tag 'id', params[:id]
+
+        .row
+          .col-md-6
+            = link_to 'Nevermind', root_path, class: 'btn btn-danger btn-block', id: 'nevermind-link'
+          .col-md-6
+            = submit_tag 'Submit', class: 'btn btn-primary btn-block'
