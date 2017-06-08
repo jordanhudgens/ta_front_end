@@ -24,7 +24,7 @@ module HandRaiseApiConnector
     )
   end
 
-  def self.submit_resolution(id, status, resolution, ta)
+  def self.submit_resolution(id, status, ta, resolution)
     params = {
       'hand_raise[resolution]' => resolution,
       'hand_raise[status]' => status,

@@ -5,11 +5,11 @@
         div.form-group
           = 'Resolution'
           br
-          = text_area_tag 'resolution', nil, class: 'form-control', rows: 20
+          = text_area_tag 'resolution', nil, class: 'form-control', rows: 20, value: params['resolusion']
         div.form-group
           = 'Status'
           br
-          = select_tag "Status", options_for_select([['Resolved', 'resolved'], ['Unresolved', 'unresolved']], 'status'), include_blank: true, class: 'form-control'
+          = select_tag "Status", options_for_select(status_enum, 'status'), include_blank: false, class: 'form-control'
         = hidden_field_tag 'id', params[:id]
 
         .row

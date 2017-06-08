@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   end
 
   post 'resolution', to: 'static#resolution'
+  get 'take_question', to: 'static#take_question'
   root to: 'static#home'
 end

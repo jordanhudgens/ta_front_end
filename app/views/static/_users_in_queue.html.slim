@@ -1,5 +1,6 @@
-- if hand_raises
-  = link_to 'Take Next', root_path, class: 'btn btn-primary take-next-button btn-block'
+- if hand_raises.any?
+  - if params[:filter].blank? || (params[:filter] == 'pending')
+    = link_to 'Take Next', take_question_path(id: hand_raises.first['id']), class: 'btn btn-primary take-next-button btn-block'
   - hand_raises.each do |hand_raise|
     .row.queue-component
       .col-md-4
@@ -7,10 +8,11 @@
       .col-md-6.queue-item-title
         = hand_raise['question']
       .col-md-2.action-icons
-        div.queue-action-icon-links
-          = link_to '<i class="fa fa-play" aria-hidden="true"></i>'.html_safe, root_path
+        - if hand_raise['status'] == 'pending' || hand_raise['status'] == 'resolved' || hand_raise['status'] == 'unresolved'
+          div.queue-action-icon-links
+            = link_to '<i class="fa fa-play" aria-hidden="true"></i>'.html_safe, take_question_path(id: hand_raise['id'])
         div.queue-action-icon-links
           = link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, "?id=#{hand_raise['id']}"
 - else
-  div
+  .row.queue-component
     = "There are no questions in this queue"

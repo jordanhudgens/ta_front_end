@@ -4,5 +4,5 @@
       = hand_raise['status'].upcase
     .col-md-6
     .col-md-3
-      = link_to 'Add Resolution', root_path, class: 'btn btn-primary btn-block', id: 'add-resolution-link'
-
+      - if hand_raise['status'] == 'in_progress'
+        = link_to 'Add Resolution', root_path, class: 'btn btn-primary btn-block', id: 'add-resolution-link'
