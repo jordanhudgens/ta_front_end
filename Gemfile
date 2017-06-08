@@ -45,3 +45,4 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'httparty', '~> 0.15.5'
 gem 'redcarpet'
 gem 'coderay'
+gem 'clipboard-rails'

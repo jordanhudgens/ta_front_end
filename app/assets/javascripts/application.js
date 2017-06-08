@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require jquery_ujs
+//= require clipboard
 //= require turbolinks
 //= require_tree .
 //= require gritter

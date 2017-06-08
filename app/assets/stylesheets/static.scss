@@ -91,3 +91,11 @@
 .disabled {
   visibility: hidden;
 }
+
+.slack-link {
+  font-family: 'Roboto', sans-serif !important;
+  color: white;
+  &:hover {
+    cursor: copy;
+  }
+}

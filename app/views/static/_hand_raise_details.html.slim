@@ -3,11 +3,18 @@
     .col-md-8
       .ticket-titles
         = hand_raise['student_name']
-      div.guide-link
-        = link_to "<i class='fa fa-link circle-icon' aria-hidden='true'></i>  #{hand_raise['guide_title']}".html_safe, root_path, target: '_blank'
     .col-md-4
       = 'asked '
       = time_ago_in_words(hand_raise['created_at'].to_date) + ' ago'
+
+  .row
+    .col-md-8
+      div.guide-link
+        = link_to "<i class='fa fa-link circle-icon' aria-hidden='true'></i>  #{hand_raise['guide_title']}".html_safe, root_path, target: '_blank'
+    .col-md-4
+      - if !hand_raise['student_slack_username'].blank?
+        div.guide-link
+          a.slack-link.btn.btn-primary.btn-block data-clipboard-text=("#{hand_raise['student_slack_username']}")  Copy Slack Username
 
   .row
     .ticket-title
